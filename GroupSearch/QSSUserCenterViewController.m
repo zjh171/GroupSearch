@@ -9,7 +9,7 @@
 #import "QSSUserCenterViewController.h"
 #import "QSSUserInfoCell.h"
 
-@interface QSSUserCenterViewController ()
+@interface QSSUserCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"群搜搜";
+    self.title = @"我的";
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

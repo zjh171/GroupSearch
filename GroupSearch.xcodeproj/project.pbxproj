@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		9600DB2C22D9DAA00087566C /* QSSUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9600DB2A22D9DAA00087566C /* QSSUserInfoCell.m */; };
 		9600DB2D22D9DAA00087566C /* QSSUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9600DB2B22D9DAA00087566C /* QSSUserInfoCell.xib */; };
+		963DBBD622DA1AAE008B52AB /* QSSEditGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DBBD422DA1AAE008B52AB /* QSSEditGroupViewController.m */; };
+		963DBBD722DA1AAE008B52AB /* QSSEditGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963DBBD522DA1AAE008B52AB /* QSSEditGroupViewController.xib */; };
+		963DBBDB22DA1E92008B52AB /* QSSGroupNameInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DBBD922DA1E92008B52AB /* QSSGroupNameInfoCell.m */; };
+		963DBBDC22DA1E92008B52AB /* QSSGroupNameInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 963DBBDA22DA1E92008B52AB /* QSSGroupNameInfoCell.xib */; };
 		96D3F78722D9B82F00925CBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D3F78622D9B82F00925CBA /* AppDelegate.m */; };
 		96D3F78F22D9B83100925CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D3F78E22D9B83100925CBA /* Assets.xcassets */; };
 		96D3F79222D9B83100925CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D3F79022D9B83100925CBA /* LaunchScreen.storyboard */; };
@@ -28,6 +32,12 @@
 		9600DB2922D9DAA00087566C /* QSSUserInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSUserInfoCell.h; sourceTree = "<group>"; };
 		9600DB2A22D9DAA00087566C /* QSSUserInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSUserInfoCell.m; sourceTree = "<group>"; };
 		9600DB2B22D9DAA00087566C /* QSSUserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSUserInfoCell.xib; sourceTree = "<group>"; };
+		963DBBD322DA1AAE008B52AB /* QSSEditGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSEditGroupViewController.h; sourceTree = "<group>"; };
+		963DBBD422DA1AAE008B52AB /* QSSEditGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSEditGroupViewController.m; sourceTree = "<group>"; };
+		963DBBD522DA1AAE008B52AB /* QSSEditGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSEditGroupViewController.xib; sourceTree = "<group>"; };
+		963DBBD822DA1E92008B52AB /* QSSGroupNameInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSGroupNameInfoCell.h; sourceTree = "<group>"; };
+		963DBBD922DA1E92008B52AB /* QSSGroupNameInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSGroupNameInfoCell.m; sourceTree = "<group>"; };
+		963DBBDA22DA1E92008B52AB /* QSSGroupNameInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSGroupNameInfoCell.xib; sourceTree = "<group>"; };
 		96D3F78222D9B82F00925CBA /* GroupSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D3F78522D9B82F00925CBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96D3F78622D9B82F00925CBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -104,6 +114,12 @@
 				9600DB2922D9DAA00087566C /* QSSUserInfoCell.h */,
 				9600DB2A22D9DAA00087566C /* QSSUserInfoCell.m */,
 				9600DB2B22D9DAA00087566C /* QSSUserInfoCell.xib */,
+				963DBBD322DA1AAE008B52AB /* QSSEditGroupViewController.h */,
+				963DBBD422DA1AAE008B52AB /* QSSEditGroupViewController.m */,
+				963DBBD522DA1AAE008B52AB /* QSSEditGroupViewController.xib */,
+				963DBBD822DA1E92008B52AB /* QSSGroupNameInfoCell.h */,
+				963DBBD922DA1E92008B52AB /* QSSGroupNameInfoCell.m */,
+				963DBBDA22DA1E92008B52AB /* QSSGroupNameInfoCell.xib */,
 			);
 			path = GroupSearch;
 			sourceTree = "<group>";
@@ -176,6 +192,8 @@
 			files = (
 				96D3F7A222D9BC1C00925CBA /* QSSGroupInfoCell.xib in Resources */,
 				9600DB2D22D9DAA00087566C /* QSSUserInfoCell.xib in Resources */,
+				963DBBDC22DA1E92008B52AB /* QSSGroupNameInfoCell.xib in Resources */,
+				963DBBD722DA1AAE008B52AB /* QSSEditGroupViewController.xib in Resources */,
 				96D3F79222D9B83100925CBA /* LaunchScreen.storyboard in Resources */,
 				96D3F7A722D9C1E000925CBA /* QSSUserCenterViewController.xib in Resources */,
 				96D3F78F22D9B83100925CBA /* Assets.xcassets in Resources */,
@@ -216,10 +234,12 @@
 			files = (
 				96D3F7A622D9C1E000925CBA /* QSSUserCenterViewController.m in Sources */,
 				96D3F79522D9B83100925CBA /* main.m in Sources */,
+				963DBBDB22DA1E92008B52AB /* QSSGroupNameInfoCell.m in Sources */,
 				9600DB2C22D9DAA00087566C /* QSSUserInfoCell.m in Sources */,
 				96D3F79D22D9B8F400925CBA /* QSSHomeViewController.m in Sources */,
 				96D3F78722D9B82F00925CBA /* AppDelegate.m in Sources */,
 				96D3F7A122D9BC1C00925CBA /* QSSGroupInfoCell.m in Sources */,
+				963DBBD622DA1AAE008B52AB /* QSSEditGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
