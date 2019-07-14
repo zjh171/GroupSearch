@@ -8,6 +8,8 @@
 
 #import "QSSGroupDetailViewController.h"
 #import "QSSGroupContentShowCell.h"
+#import "QSSGroupQRCodeShowCell.h"
+#import "QSSQRCodeDetailViewController.h"
 
 @interface QSSGroupDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -60,6 +62,9 @@
     UINib *nib = [UINib nibWithNibName:NSStringFromClass(QSSGroupContentShowCell.class) bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:NSStringFromClass(QSSGroupContentShowCell.class)];
     
+    UINib *nib2 = [UINib nibWithNibName:NSStringFromClass(QSSGroupQRCodeShowCell.class) bundle:nil];
+    [self.tableView registerNib:nib2 forCellReuseIdentifier:NSStringFromClass(QSSGroupQRCodeShowCell.class)];
+    
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         self.tableView.frame = CGRectMake(0, 44 + 44 + 40, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 40 - 44 - 44);
@@ -78,19 +83,19 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QSSGroupContentShowCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(QSSGroupContentShowCell.class) forIndexPath:indexPath];
+    NSArray *identifys = @[NSStringFromClass(QSSGroupContentShowCell.class),NSStringFromClass(QSSGroupQRCodeShowCell.class)];
+    QSSGroupContentShowCell *cell = [tableView dequeueReusableCellWithIdentifier:identifys[indexPath.row] forIndexPath:indexPath];
     [cell bindViewModel:self.viewModel.cellModels[indexPath.row]];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    QSSGroupContentShowCellModel *cellModel = self.viewModel.cellModels[indexPath.row];
-    NSDictionary *params = @{@"group":cellModel.groupInfo};
-    QSSGroupDetailViewModel *viewModel = [[QSSGroupDetailViewModel alloc] initWithParams:params];
-    
-    QSSGroupDetailViewController *vc = [[QSSGroupDetailViewController alloc] initWithViewModel:viewModel];
+    QSSGroupQRCodeShowCellModel *cellModel = self.viewModel.cellModels[indexPath.row];
+    QSSQRCodeDetailViewModel *viewModel = [[QSSQRCodeDetailViewModel alloc] initWithParams:@{@"qr":cellModel.pic}];
+    QSSQRCodeDetailViewController *vc = [[QSSQRCodeDetailViewController alloc] initWithViewModel:viewModel];
     [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

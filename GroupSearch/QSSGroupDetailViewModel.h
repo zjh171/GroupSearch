@@ -10,6 +10,7 @@
 
 #import "QSSBaseViewModel.h"
 #import "QSSGroupContentShowCellModel.h"
+#import "QSSGroupQRCodeShowCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *title;
 
-@property (nonatomic, strong) NSArray<QSSGroupContentShowCellModel *> *cellModels;
+@property (nonatomic, strong) NSArray *cellModels;
 
 @end
 

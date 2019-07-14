@@ -25,7 +25,7 @@
 -(void) initilize {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    NSDictionary *params = @{@"key":@"测试"};
+    NSDictionary *params = @{@"key":@"百"};
     [manager GET:@"http://111.231.67.200:8088/groupSearchPlatform/groupInfo" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

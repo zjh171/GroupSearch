@@ -26,6 +26,12 @@
 		966BA89222DB146E005F73B1 /* QSSGroupContentShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA89022DB146E005F73B1 /* QSSGroupContentShowCell.m */; };
 		966BA89322DB146E005F73B1 /* QSSGroupContentShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966BA89122DB146E005F73B1 /* QSSGroupContentShowCell.xib */; };
 		966BA89622DB1501005F73B1 /* QSSGroupContentShowCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA89522DB1501005F73B1 /* QSSGroupContentShowCellModel.m */; };
+		966BA89A22DB214C005F73B1 /* QSSGroupQRCodeShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA89822DB214C005F73B1 /* QSSGroupQRCodeShowCell.m */; };
+		966BA89B22DB214C005F73B1 /* QSSGroupQRCodeShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966BA89922DB214C005F73B1 /* QSSGroupQRCodeShowCell.xib */; };
+		966BA89E22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA89D22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.m */; };
+		966BA8A222DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA8A022DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m */; };
+		966BA8A322DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966BA8A122DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib */; };
+		966BA8A622DB3058005F73B1 /* QSSQRCodeDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA8A522DB3058005F73B1 /* QSSQRCodeDetailViewModel.m */; };
 		96D3F78722D9B82F00925CBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D3F78622D9B82F00925CBA /* AppDelegate.m */; };
 		96D3F78F22D9B83100925CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D3F78E22D9B83100925CBA /* Assets.xcassets */; };
 		96D3F79222D9B83100925CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D3F79022D9B83100925CBA /* LaunchScreen.storyboard */; };
@@ -74,6 +80,16 @@
 		966BA89122DB146E005F73B1 /* QSSGroupContentShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSGroupContentShowCell.xib; sourceTree = "<group>"; };
 		966BA89422DB1501005F73B1 /* QSSGroupContentShowCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSGroupContentShowCellModel.h; sourceTree = "<group>"; };
 		966BA89522DB1501005F73B1 /* QSSGroupContentShowCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSGroupContentShowCellModel.m; sourceTree = "<group>"; };
+		966BA89722DB214C005F73B1 /* QSSGroupQRCodeShowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSGroupQRCodeShowCell.h; sourceTree = "<group>"; };
+		966BA89822DB214C005F73B1 /* QSSGroupQRCodeShowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSGroupQRCodeShowCell.m; sourceTree = "<group>"; };
+		966BA89922DB214C005F73B1 /* QSSGroupQRCodeShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSGroupQRCodeShowCell.xib; sourceTree = "<group>"; };
+		966BA89C22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSGroupQRCodeShowCellModel.h; sourceTree = "<group>"; };
+		966BA89D22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSGroupQRCodeShowCellModel.m; sourceTree = "<group>"; };
+		966BA89F22DB2FA8005F73B1 /* QSSQRCodeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSQRCodeDetailViewController.h; sourceTree = "<group>"; };
+		966BA8A022DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSQRCodeDetailViewController.m; sourceTree = "<group>"; };
+		966BA8A122DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSQRCodeDetailViewController.xib; sourceTree = "<group>"; };
+		966BA8A422DB3058005F73B1 /* QSSQRCodeDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSQRCodeDetailViewModel.h; sourceTree = "<group>"; };
+		966BA8A522DB3058005F73B1 /* QSSQRCodeDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSQRCodeDetailViewModel.m; sourceTree = "<group>"; };
 		96D3F78222D9B82F00925CBA /* GroupSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D3F78522D9B82F00925CBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96D3F78622D9B82F00925CBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -179,6 +195,16 @@
 				966BA89122DB146E005F73B1 /* QSSGroupContentShowCell.xib */,
 				966BA89422DB1501005F73B1 /* QSSGroupContentShowCellModel.h */,
 				966BA89522DB1501005F73B1 /* QSSGroupContentShowCellModel.m */,
+				966BA89722DB214C005F73B1 /* QSSGroupQRCodeShowCell.h */,
+				966BA89822DB214C005F73B1 /* QSSGroupQRCodeShowCell.m */,
+				966BA89922DB214C005F73B1 /* QSSGroupQRCodeShowCell.xib */,
+				966BA89C22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.h */,
+				966BA89D22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.m */,
+				966BA89F22DB2FA8005F73B1 /* QSSQRCodeDetailViewController.h */,
+				966BA8A022DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m */,
+				966BA8A122DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib */,
+				966BA8A422DB3058005F73B1 /* QSSQRCodeDetailViewModel.h */,
+				966BA8A522DB3058005F73B1 /* QSSQRCodeDetailViewModel.m */,
 			);
 			path = GroupSearch;
 			sourceTree = "<group>";
@@ -252,9 +278,11 @@
 				96D3F7A222D9BC1C00925CBA /* QSSGroupInfoCell.xib in Resources */,
 				9600DB2D22D9DAA00087566C /* QSSUserInfoCell.xib in Resources */,
 				963DBBDC22DA1E92008B52AB /* QSSGroupNameInfoCell.xib in Resources */,
+				966BA89B22DB214C005F73B1 /* QSSGroupQRCodeShowCell.xib in Resources */,
 				963DBBD722DA1AAE008B52AB /* QSSEditGroupViewController.xib in Resources */,
 				963DBBEF22DAE0B0008B52AB /* QSSGroupDetailViewController.xib in Resources */,
 				96D3F79222D9B83100925CBA /* LaunchScreen.storyboard in Resources */,
+				966BA8A322DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib in Resources */,
 				96D3F7A722D9C1E000925CBA /* QSSUserCenterViewController.xib in Resources */,
 				96D3F78F22D9B83100925CBA /* Assets.xcassets in Resources */,
 				966BA89322DB146E005F73B1 /* QSSGroupContentShowCell.xib in Resources */,
@@ -298,6 +326,7 @@
 				96D3F7A622D9C1E000925CBA /* QSSUserCenterViewController.m in Sources */,
 				96D3F79522D9B83100925CBA /* main.m in Sources */,
 				963DBBDB22DA1E92008B52AB /* QSSGroupNameInfoCell.m in Sources */,
+				966BA89A22DB214C005F73B1 /* QSSGroupQRCodeShowCell.m in Sources */,
 				963DBBE722DAD079008B52AB /* QSSGroupInfoModel.m in Sources */,
 				963DBBE422DAC606008B52AB /* QSSHomeViewModel.m in Sources */,
 				963DBBEE22DAE0B0008B52AB /* QSSGroupDetailViewController.m in Sources */,
@@ -306,12 +335,15 @@
 				963DBBE022DA21D4008B52AB /* QSSGroupContentCell.m in Sources */,
 				96D3F78722D9B82F00925CBA /* AppDelegate.m in Sources */,
 				966BA89222DB146E005F73B1 /* QSSGroupContentShowCell.m in Sources */,
+				966BA8A622DB3058005F73B1 /* QSSQRCodeDetailViewModel.m in Sources */,
 				96D3F7A122D9BC1C00925CBA /* QSSGroupInfoCell.m in Sources */,
 				963DBBF822DAFB99008B52AB /* QSSBaseViewModel.m in Sources */,
 				963DBBF222DAF95A008B52AB /* QSSBaseViewController.m in Sources */,
+				966BA89E22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.m in Sources */,
 				963DBBD622DA1AAE008B52AB /* QSSEditGroupViewController.m in Sources */,
 				963DBBF522DAFA56008B52AB /* QSSGroupDetailViewModel.m in Sources */,
 				963DBBEA22DAD54A008B52AB /* QSSGroupInfoCellModel.m in Sources */,
+				966BA8A222DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

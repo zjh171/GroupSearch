@@ -11,7 +11,7 @@
 
 @interface QSSBaseViewModel ()
 
-@property (nonatomic, strong) NSDictionary *params;
+@property (nonatomic, strong,readwrite) NSDictionary *params;
 
 @end
 

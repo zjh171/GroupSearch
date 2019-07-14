@@ -1,5 +1,5 @@
 //
-//  QSSBaseViewModel.h
+//  QSSGroupQRCodeShowCellModel.h
 //  GroupSearch
 //
 //  Created by kyson on 2019/7/14.
@@ -10,14 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QSSBaseViewModel : NSObject
+@interface QSSGroupQRCodeShowCellModel : NSObject
 
-@property (nonatomic, strong,readonly) NSDictionary *params;
+@property (nonatomic, copy) NSString *pic;
 
--(instancetype) initWithParams:(NSDictionary *) params;
-
-
--(void) initilize ;
 @end
 
 NS_ASSUME_NONNULL_END

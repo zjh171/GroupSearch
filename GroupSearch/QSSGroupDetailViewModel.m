@@ -19,20 +19,21 @@
 
 @implementation QSSGroupDetailViewModel
 
-
-- (instancetype)initWithParams:(NSDictionary *)params {
-    if (self = [super initWithParams:params]) {
-        QSSGroupInfoModel *groupInfo = params[@"group"];
-        self.groupInfo = groupInfo;
-        self.title = groupInfo.name;
-    }
-    return self;
-}
-
 -(void)initilize {
+    
+    QSSGroupInfoModel *groupInfo = self.params[@"group"];
+    self.groupInfo = groupInfo;
+    self.title = groupInfo.name;
+    
+    
     QSSGroupContentShowCellModel *cellModel = [[QSSGroupContentShowCellModel alloc] init];
     cellModel.groupInfo = self.groupInfo.describes;
-    self.cellModels = @[cellModel];
+    
+    QSSGroupQRCodeShowCellModel *cellModel2 = [[QSSGroupQRCodeShowCellModel alloc] init];
+    cellModel2.pic = self.groupInfo.picUrl;
+    
+    self.cellModels = @[cellModel,cellModel2];
+
     
 }
 

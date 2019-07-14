@@ -4,6 +4,7 @@ target 'GroupSearch' do
   pod 'Masonry','1.1.0'
   pod 'MLeaksFinder','1.0.0'
   pod 'ReactiveObjC','3.1.1'
-  pod 'MJExtension'
+  pod 'MJExtension','3.0.17'
+  pod 'SDWebImage','5.0.6'
 
 end
