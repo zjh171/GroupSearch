@@ -11,6 +11,7 @@
 #import "QSSEditGroupViewController.h"
 #import "QSSHomeViewModel.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "QSSGroupDetailViewController.h"
 
 @interface QSSHomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -56,12 +57,18 @@
         
         self.searchBar.frame =  CGRectMake(0, 44 + 44, UIScreen.mainScreen.bounds.size.width, 40);
         self.tableView.frame = CGRectMake(0, 44 + 44 + 40, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 40 - 44 - 44);
-
     }
     else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
+    for(UIView *view in [[[self.searchBar subviews] lastObject] subviews] )
+    {
+        if([view isKindOfClass:NSClassFromString(@"UISearchBarBackground")])
+        {
+            view.backgroundColor = [UIColor whiteColor];
+        }
+    }
     
     @weakify(self);
     [[RACObserve(self, viewModel.cellModels) ignore:nil] subscribeNext:^(NSArray *x) {
@@ -95,6 +102,12 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    QSSGroupDetailViewController *vc = [[QSSGroupDetailViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self.searchBar resignFirstResponder];
@@ -120,6 +133,9 @@
     if (!_searchBar) {
         _searchBar = [[UISearchBar alloc] init];
         _searchBar.placeholder = @"搜索";
+        _searchBar.tintColor = UIColor.whiteColor;
+        _searchBar.barTintColor = UIColor.whiteColor;
+        
     }
     return _searchBar;
 }
