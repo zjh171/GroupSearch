@@ -30,6 +30,7 @@
     return self;
 }
 
+
 - (instancetype)initWithViewModel:(NSObject *)viewModel {
     if (self = [super initWithViewModel:viewModel]) {
         self.hidesBottomBarWhenPushed = YES;
@@ -67,9 +68,19 @@
     
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        self.tableView.frame = CGRectMake(0, 44 + 44 + 40, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 40 - 44 - 44);
+        
+        self.tableView.frame = CGRectMake(0, 44 + 44, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 44 - 44);
     }
     
+    UIImage *editImage = [UIImage imageNamed:@"ico_back"];
+    UIBarButtonItem *item =[[UIBarButtonItem alloc] initWithImage:editImage style:UIBarButtonItemStyleDone target:self action:@selector(backButtonClicked)];
+    self.navigationItem.leftBarButtonItem = item;
+    
+}
+
+
+-(void) backButtonClicked{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

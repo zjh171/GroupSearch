@@ -21,7 +21,8 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+    self.window.backgroundColor = [UIColor colorWithRed:237/255.f green:237/255.f blue:237/255.f alpha:237/255.f];
+
     QSSHomeViewController *vc = [[QSSHomeViewController alloc] init];
     UINavigationController *navc = [[UINavigationController alloc] initWithRootViewController:vc];
     UIImage *img0 = [UIImage imageNamed:@"ico_home"];

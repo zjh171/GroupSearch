@@ -23,9 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
     self.qrCodeImageView.layer.cornerRadius = 5.f;
-//    self.qrCodeImageView.layer.borderColor = [UIColor colorWithRed:233/255.f green:233/255.f blue:233/255.f alpha:1.f].CGColor;
     self.qrCodeImageView.clipsToBounds = YES;
     self.heightConstraint.constant = 1.5 * (UIScreen.mainScreen.bounds.size.width - 30 );
     @weakify(self);
@@ -40,6 +39,14 @@
     }];
     
     
+    UIImage *editImage = [UIImage imageNamed:@"ico_back"];
+    UIBarButtonItem *item =[[UIBarButtonItem alloc] initWithImage:editImage style:UIBarButtonItemStyleDone target:self action:@selector(backButtonClicked)];
+    self.navigationItem.leftBarButtonItem = item;
+    
+}
+
+-(void) backButtonClicked{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
