@@ -130,6 +130,7 @@
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     }
     return _tableView;
 }
