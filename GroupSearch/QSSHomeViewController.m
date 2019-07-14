@@ -104,7 +104,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    QSSGroupDetailViewController *vc = [[QSSGroupDetailViewController alloc] init];
+    QSSGroupInfoCellModel *cellModel = self.viewModel.cellModels[indexPath.row];
+    NSDictionary *params = @{@"group":cellModel.groupInfo};
+    QSSGroupDetailViewModel *viewModel = [[QSSGroupDetailViewModel alloc] initWithParams:params];
+    
+    QSSGroupDetailViewController *vc = [[QSSGroupDetailViewController alloc] initWithViewModel:viewModel];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -125,6 +129,7 @@
 -(UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }

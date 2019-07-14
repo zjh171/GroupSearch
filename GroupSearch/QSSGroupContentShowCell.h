@@ -1,5 +1,5 @@
 //
-//  QSSGroupDetailViewController.h
+//  QSSGroupContentShowCell.h
 //  GroupSearch
 //
 //  Created by kyson on 2019/7/14.
@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QSSBaseViewController.h"
-
-#import "QSSGroupDetailViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QSSGroupDetailViewController : QSSBaseViewController
+@interface QSSGroupContentShowCell : UITableViewCell
+
+
+-(void) bindViewModel:(id) viewModel;
+
 
 @end
 

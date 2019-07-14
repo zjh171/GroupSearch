@@ -37,16 +37,26 @@
                         <color key="textColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Egr-Q6-oIk">
+                        <rect key="frame" x="94" y="74" width="226" height="0.5"/>
+                        <color key="backgroundColor" red="0.93325150010000002" green="0.93338567019999996" blue="0.93322223419999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="rHv-em-EbU"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Egr-Q6-oIk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="94" id="5iE-wa-Kty"/>
                     <constraint firstItem="ga7-F9-Fuo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="5oY-l4-Aec"/>
                     <constraint firstItem="ga7-F9-Fuo" firstAttribute="leading" secondItem="M9X-Bn-ecg" secondAttribute="trailing" constant="18" id="8rr-um-Jsy"/>
+                    <constraint firstAttribute="trailing" secondItem="Egr-Q6-oIk" secondAttribute="trailing" id="8wo-NF-UZ7"/>
                     <constraint firstItem="M9X-Bn-ecg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="CkZ-iT-TA0"/>
                     <constraint firstItem="zca-lx-2cK" firstAttribute="top" secondItem="ga7-F9-Fuo" secondAttribute="bottom" constant="3" id="DMs-D7-o7s"/>
                     <constraint firstItem="M9X-Bn-ecg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GxX-He-s1y"/>
                     <constraint firstAttribute="bottom" secondItem="zca-lx-2cK" secondAttribute="bottom" constant="6.5" id="TgR-B1-VTy"/>
                     <constraint firstAttribute="trailing" secondItem="zca-lx-2cK" secondAttribute="trailing" constant="16" id="YNv-62-kV0"/>
                     <constraint firstAttribute="trailing" secondItem="ga7-F9-Fuo" secondAttribute="trailing" constant="23" id="dTa-fg-6iO"/>
+                    <constraint firstAttribute="bottom" secondItem="Egr-Q6-oIk" secondAttribute="bottom" id="eP4-9b-vkc"/>
                     <constraint firstItem="zca-lx-2cK" firstAttribute="leading" secondItem="M9X-Bn-ecg" secondAttribute="trailing" constant="18" id="jgn-Li-fwu"/>
                     <constraint firstItem="M9X-Bn-ecg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xTJ-7V-4UP"/>
                 </constraints>

@@ -1,5 +1,5 @@
 //
-//  QSSGroupDetailViewController.h
+//  QSSBaseViewController.h
 //  GroupSearch
 //
 //  Created by kyson on 2019/7/14.
@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QSSBaseViewController.h"
-
-#import "QSSGroupDetailViewModel.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QSSGroupDetailViewController : QSSBaseViewController
+@interface QSSBaseViewController : UIViewController
+
+
+-(instancetype) initWithViewModel:(NSObject *) viewModel;
 
 @end
 
