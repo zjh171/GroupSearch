@@ -16,21 +16,24 @@ PODS:
     - AFNetworking/NSURLSession
   - FBRetainCycleDetector (0.1.4)
   - Masonry (1.1.0)
+  - MJExtension (3.0.17)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - ReactiveObjC (3.1.1)
 
 DEPENDENCIES:
-  - AFNetworking
-  - Masonry
-  - MLeaksFinder
-  - ReactiveObjC
+  - AFNetworking (= 3.2.1)
+  - Masonry (= 1.1.0)
+  - MJExtension
+  - MLeaksFinder (= 1.0.0)
+  - ReactiveObjC (= 3.1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - FBRetainCycleDetector
     - Masonry
+    - MJExtension
     - MLeaksFinder
     - ReactiveObjC
 
@@ -38,9 +41,10 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: 8f9ae6cbbee7d4fa7db3081079f4b5cfd7790448
+PODFILE CHECKSUM: cd31f6a6a8a36223495a03b8d28724cba79521ce
 
 COCOAPODS: 1.5.3
