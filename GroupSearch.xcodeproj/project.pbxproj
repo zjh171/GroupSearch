@@ -32,6 +32,9 @@
 		966BA8A222DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA8A022DB2FA8005F73B1 /* QSSQRCodeDetailViewController.m */; };
 		966BA8A322DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966BA8A122DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib */; };
 		966BA8A622DB3058005F73B1 /* QSSQRCodeDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA8A522DB3058005F73B1 /* QSSQRCodeDetailViewModel.m */; };
+		966BA8AA22DF7BF2005F73B1 /* QSSSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA8A822DF7BF2005F73B1 /* QSSSearchViewController.m */; };
+		966BA8AB22DF7BF2005F73B1 /* QSSSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966BA8A922DF7BF2005F73B1 /* QSSSearchViewController.xib */; };
+		966BA8AE22DF7CAC005F73B1 /* QSSSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA8AD22DF7CAC005F73B1 /* QSSSearchViewModel.m */; };
 		96D3F78722D9B82F00925CBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D3F78622D9B82F00925CBA /* AppDelegate.m */; };
 		96D3F78F22D9B83100925CBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D3F78E22D9B83100925CBA /* Assets.xcassets */; };
 		96D3F79222D9B83100925CBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D3F79022D9B83100925CBA /* LaunchScreen.storyboard */; };
@@ -90,6 +93,11 @@
 		966BA8A122DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSQRCodeDetailViewController.xib; sourceTree = "<group>"; };
 		966BA8A422DB3058005F73B1 /* QSSQRCodeDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSQRCodeDetailViewModel.h; sourceTree = "<group>"; };
 		966BA8A522DB3058005F73B1 /* QSSQRCodeDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSQRCodeDetailViewModel.m; sourceTree = "<group>"; };
+		966BA8A722DF7BF2005F73B1 /* QSSSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSSearchViewController.h; sourceTree = "<group>"; };
+		966BA8A822DF7BF2005F73B1 /* QSSSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSSearchViewController.m; sourceTree = "<group>"; };
+		966BA8A922DF7BF2005F73B1 /* QSSSearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSSearchViewController.xib; sourceTree = "<group>"; };
+		966BA8AC22DF7CAC005F73B1 /* QSSSearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSSearchViewModel.h; sourceTree = "<group>"; };
+		966BA8AD22DF7CAC005F73B1 /* QSSSearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSSearchViewModel.m; sourceTree = "<group>"; };
 		96D3F78222D9B82F00925CBA /* GroupSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D3F78522D9B82F00925CBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96D3F78622D9B82F00925CBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -205,6 +213,11 @@
 				966BA8A122DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib */,
 				966BA8A422DB3058005F73B1 /* QSSQRCodeDetailViewModel.h */,
 				966BA8A522DB3058005F73B1 /* QSSQRCodeDetailViewModel.m */,
+				966BA8A722DF7BF2005F73B1 /* QSSSearchViewController.h */,
+				966BA8A822DF7BF2005F73B1 /* QSSSearchViewController.m */,
+				966BA8A922DF7BF2005F73B1 /* QSSSearchViewController.xib */,
+				966BA8AC22DF7CAC005F73B1 /* QSSSearchViewModel.h */,
+				966BA8AD22DF7CAC005F73B1 /* QSSSearchViewModel.m */,
 			);
 			path = GroupSearch;
 			sourceTree = "<group>";
@@ -287,6 +300,7 @@
 				96D3F78F22D9B83100925CBA /* Assets.xcassets in Resources */,
 				966BA89322DB146E005F73B1 /* QSSGroupContentShowCell.xib in Resources */,
 				963DBBE122DA21D4008B52AB /* QSSGroupContentCell.xib in Resources */,
+				966BA8AB22DF7BF2005F73B1 /* QSSSearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +339,12 @@
 				966BA89622DB1501005F73B1 /* QSSGroupContentShowCellModel.m in Sources */,
 				96D3F7A622D9C1E000925CBA /* QSSUserCenterViewController.m in Sources */,
 				96D3F79522D9B83100925CBA /* main.m in Sources */,
+				966BA8AA22DF7BF2005F73B1 /* QSSSearchViewController.m in Sources */,
 				963DBBDB22DA1E92008B52AB /* QSSGroupNameInfoCell.m in Sources */,
 				966BA89A22DB214C005F73B1 /* QSSGroupQRCodeShowCell.m in Sources */,
 				963DBBE722DAD079008B52AB /* QSSGroupInfoModel.m in Sources */,
 				963DBBE422DAC606008B52AB /* QSSHomeViewModel.m in Sources */,
+				966BA8AE22DF7CAC005F73B1 /* QSSSearchViewModel.m in Sources */,
 				963DBBEE22DAE0B0008B52AB /* QSSGroupDetailViewController.m in Sources */,
 				9600DB2C22D9DAA00087566C /* QSSUserInfoCell.m in Sources */,
 				96D3F79D22D9B8F400925CBA /* QSSHomeViewController.m in Sources */,

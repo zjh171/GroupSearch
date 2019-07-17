@@ -1,63 +1,50 @@
 //
-//  QSSHomeViewController.m
+//  QSSSearchViewController.m
 //  GroupSearch
 //
-//  Created by kyson on 2019/7/13.
+//  Created by kyson on 2019/7/17.
 //  Copyright © 2019 cn.kyson. All rights reserved.
 //
 
-#import "QSSHomeViewController.h"
-#import "QSSGroupInfoCell.h"
-#import "QSSEditGroupViewController.h"
-#import "QSSHomeViewModel.h"
-#import <ReactiveObjC/ReactiveObjC.h>
-#import "QSSGroupDetailViewController.h"
 #import "QSSSearchViewController.h"
 
-@interface QSSHomeViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
+#import "QSSGroupInfoCell.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+#import "QSSGroupDetailViewController.h"
+#import "QSSSearchViewModel.h"
+
+@interface QSSSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISearchBar *searchBar;
 
-@property (nonatomic, strong) QSSHomeViewModel *viewModel;
+@property (nonatomic, strong) QSSSearchViewModel *viewModel;
 
 @end
 
-@implementation QSSHomeViewController
-
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self viewModel];
-    }
-    return self;
-}
+@implementation QSSSearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"首页";
+    
+    self.title = @"搜索";
     // Do any additional setup after loading the view.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 75;
     
-    UIImage *editImage = [UIImage imageNamed:@"ico_add"];
-    UIBarButtonItem *item =[[UIBarButtonItem alloc] initWithImage:editImage style:UIBarButtonItemStyleDone target:self action:@selector(addButtonClicked)];
-    self.navigationItem.rightBarButtonItem = item;
-    
-    [self.view addSubview:self.searchBar];
-    
     [self.view addSubview:self.tableView];
     UINib *nib = [UINib nibWithNibName:NSStringFromClass(QSSGroupInfoCell.class) bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:NSStringFromClass(QSSGroupInfoCell.class)];
     
+    [self.view addSubview:self.searchBar];
+
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         
-        self.searchBar.frame =  CGRectMake(0, 44 + 44, UIScreen.mainScreen.bounds.size.width, 40);
-        self.tableView.frame = CGRectMake(0, 44 + 44 + 40, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 40 - 44 - 44);
+        self.searchBar.frame =  CGRectMake(0,  44, UIScreen.mainScreen.bounds.size.width, 40);
+
+        self.tableView.frame = CGRectMake(0, 44 +  40, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 40 - 44 - 44);
     }
     else {
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -76,26 +63,24 @@
         @strongify(self);
         [self.tableView reloadData];
     }];
-        
+    
     self.searchBar.delegate = self;
     
 }
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    QSSSearchViewController *vc = [[QSSSearchViewController alloc] initWithViewModel:nil];
-    [self presentViewController:vc animated:NO completion:^{
-        
-    }];
-    return NO;
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [self.viewModel.requestGroupCommand execute:searchText];
 }
 
--(void) addButtonClicked {
-    QSSEditGroupViewController *vc = [[QSSEditGroupViewController alloc] init];
-    UINavigationController *navc = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:navc animated:YES completion:^{
-        
-    }];
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super viewWillDisappear:animated];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -124,27 +109,6 @@
 }
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self.searchBar resignFirstResponder];
-}
-
-
--(QSSHomeViewModel *)viewModel {
-    if (!_viewModel) {
-        _viewModel = [[QSSHomeViewModel alloc]init];
-    }
-    return _viewModel ;
-}
-
-
--(UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] init];
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-    }
-    return _tableView;
-}
 
 -(UISearchBar *)searchBar {
     if (!_searchBar) {
@@ -157,5 +121,13 @@
     return _searchBar;
 }
 
+-(UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] init];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        
+    }
+    return _tableView;
+}
 
 @end
