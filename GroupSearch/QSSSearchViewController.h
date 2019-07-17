@@ -7,6 +7,7 @@
 //
 
 #import "QSSBaseViewController.h"
+#import "QSSSearchViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

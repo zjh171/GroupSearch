@@ -11,7 +11,6 @@
 #import "QSSGroupInfoCell.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "QSSGroupDetailViewController.h"
-#import "QSSSearchViewModel.h"
 
 @interface QSSSearchViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
