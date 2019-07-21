@@ -11,11 +11,15 @@
 #import "QSSGroupContentCell.h"
 
 #import "QSSUploadPhotoCell.h"
+#import "QSSGroupSubmitView.h"
+
+#import "QSSEditGroupViewModel.h"
 
 @interface QSSEditGroupViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, strong) QSSGroupSubmitView *submitView;
+@property (nonatomic, strong) QSSEditGroupViewModel *viewModel;
 
 @end
 
@@ -33,8 +37,7 @@
     UIImage *editImage = [UIImage imageNamed:@"ico_back"];
     UIBarButtonItem *item =[[UIBarButtonItem alloc] initWithImage:editImage style:UIBarButtonItemStyleDone target:self action:@selector(backButtonClicked)];
     self.navigationItem.leftBarButtonItem = item;
-    
-    self.tableView.frame = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height);
+
     UINib *nib = [UINib nibWithNibName:NSStringFromClass(QSSGroupNameInfoCell.class) bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:NSStringFromClass(QSSGroupNameInfoCell.class)];
     
@@ -47,6 +50,32 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView) name:@"updateTableView" object:nil];
     
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.submitView];
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view);
+            make.left.and.right.equalTo(self.view);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-65.f);
+        }];
+        
+        [self.submitView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.tableView.mas_bottom);
+            make.left.and.right.equalTo(self.view);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+        }];
+        
+    }
+    else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+}
+
+-(UIRectEdge)edgesForExtendedLayout {
+    return UIRectEdgeNone;
 }
 
 -(void) backButtonClicked {
@@ -94,6 +123,12 @@
     return _tableView;
 }
 
-
+-(QSSGroupSubmitView *)submitView {
+    if (!_submitView) {
+        _submitView = [QSSGroupSubmitView loadFromXib];
+        [_submitView bindViewModel:self.viewModel.submitViewModel];
+    }
+    return _submitView;
+}
 
 @end
