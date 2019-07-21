@@ -112,6 +112,9 @@
         [((QSSGroupNameInfoCell *) cell ) bindViewModel:self.viewModel.groupNameInfoCellModel];
     }
     
+    if ([cell isKindOfClass:QSSGroupContentCell.class]) {
+        [((QSSGroupContentCell *) cell ) bindViewModel:self.viewModel.groupContentCellModel];
+    }
     
     return cell;
 }

@@ -8,5 +8,6 @@ target 'GroupSearch' do
   pod 'SDWebImage','5.0.6'
   pod 'Qiniu','7.2.5'
   pod 'MBProgressHUD','1.1.0'
+  pod 'DZNEmptyDataSet','1.8.1'
 
 end

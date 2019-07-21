@@ -11,6 +11,8 @@
 #import <MJExtension/MJExtension.h>
 #import "GTMBase64.h"
 #import "CommonCrypto/CommonHMAC.h"
+#import <AFNetworking/AFNetworking.h>
+#import "QSSGroupInfoModel.h"
 
 @interface QSSEditGroupViewModel ()
 
@@ -95,6 +97,54 @@
     return timeSp;
 }
 
+-(RACSignal *) submitSignal:(NSString *) picURL {
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        
+        NSDictionary *params = @{@"name":self.groupNameInfoCellModel.groupName,
+                                 @"describes":self.groupContentCellModel.groupContent,
+                                 @"picUrl":picURL,
+                                 };
+        NSString *json = [params mj_JSONString];
+        
+        AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
+        [serializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        manager.requestSerializer = serializer;
+        
+        // 设置请求格式
+        [manager POST:@"http://111.231.67.200:8088/groupSearchPlatform/groupInfo" parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSLog(@"%@",responseObject);
+            if([responseObject isKindOfClass:NSDictionary.class]) {
+                NSDictionary *data = responseObject[@"data"];
+                
+            }
+            
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSLog(@"%@",error);
+        }];
+        
+        RACDisposable *dispose = [RACDisposable disposableWithBlock:^{
+            
+        }];
+        return dispose;
+    }];
+    return signal;
+}
+
+
+-(RACCommand *)submitCommand {
+    if (!_submitCommand) {
+        _submitCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(NSString *input) {
+            return [self submitSignal:input];
+        }];
+    }
+    return _submitCommand;
+}
+
 -(QSSGroupSubmitViewModel *)submitViewModel {
     if (!_submitViewModel) {
         _submitViewModel = [[QSSGroupSubmitViewModel alloc] init];
@@ -106,6 +156,17 @@
                 [self.errorSubject sendNext:@"请输入群组名"];
                 return;
             }
+            
+            if (self.groupContentCellModel.groupContent.length < 1) {
+                [self.errorSubject sendNext:@"请输入群简介"];
+                return;
+            }
+#ifdef DEBUG
+            NSString * imageName1 = @"1563703320000.jpg";
+            NSString *imageUrl = [NSString stringWithFormat:@"http://image.kyson.cn/%@",imageName1];
+            [self.submitCommand execute:imageUrl];
+            return;
+#endif
             
             if (self.photoCellModel.qrCodeImage == nil) {
                 [self.errorSubject sendNext:@"请上传图片"];
@@ -119,7 +180,10 @@
             NSData *imageData = UIImagePNGRepresentation(self.photoCellModel.qrCodeImage);
             
             [upManager putData:imageData key:imageName token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-                
+                @strongify(self);
+
+                NSString *imageUrl = [NSString stringWithFormat:@"http://image.kyson.cn/%@",imageName];
+                [self.submitCommand execute:imageUrl];
             } option:nil] ;
             
         }];
@@ -137,15 +201,6 @@
 }
 
 
--(RACCommand *)submitCommand {
-    if (!_submitCommand) {
-        _submitCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-            RACSignal *signal = [[RACSignal alloc] init];
-            return signal;
-        }];
-    }
-    return _submitCommand;
-}
 
 
 -(QSSGroupNameInfoCellModel *)groupNameInfoCellModel {
@@ -154,5 +209,13 @@
     }
     return _groupNameInfoCellModel;
 }
+
+- (QSSGroupContentCellModel *)groupContentCellModel {
+    if (!_groupContentCellModel) {
+        _groupContentCellModel = [[QSSGroupContentCellModel alloc] init];
+    }
+    return _groupContentCellModel;
+}
+
 
 @end

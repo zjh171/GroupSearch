@@ -10,6 +10,7 @@
 #import "QSSGroupSubmitViewModel.h"
 #import "QSSUploadPhotoCellModel.h"
 #import "QSSGroupNameInfoCellModel.h"
+#import "QSSGroupContentCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) QSSUploadPhotoCellModel *photoCellModel;
 @property (nonatomic, strong) QSSGroupNameInfoCellModel *groupNameInfoCellModel;
+@property (nonatomic, strong) QSSGroupContentCellModel *groupContentCellModel;
 
 @property (nonatomic, strong) RACCommand *submitCommand;
 

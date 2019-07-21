@@ -12,7 +12,7 @@
 
 @interface QSSGroupContentCell ()
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
-
+@property (nonatomic, strong) QSSGroupContentCellModel *viewModel;
 
 
 @end
@@ -28,9 +28,23 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateTableView" object:nil];
     }];
     
+    // 这种写法其实已经是双向绑定的写法了，但是由于是 textView 的原因只能绑定 model.text 的变化到影响 textView.text 的值的变化的这个单向通道
+    RACChannelTo(self,contentTextView.text) = RACChannelTo(self,viewModel.groupContent);
     
+    // 在这里对textView的text changed的信号重新订阅一下，以实现上面channel未实现的另外一个绑定通道.
+    @weakify(self)
+    [self.contentTextView.rac_textSignal subscribeNext:^(NSString *x) {
+        @strongify(self)
+        self.viewModel.groupContent = x;
+    }];
 }
 
+
+-(void) bindViewModel:(id) viewModel {
+    self.viewModel = viewModel;
+    
+    
+}
 
 
 
