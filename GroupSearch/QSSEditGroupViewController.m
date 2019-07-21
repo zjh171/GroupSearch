@@ -10,6 +10,8 @@
 #import "QSSGroupNameInfoCell.h"
 #import "QSSGroupContentCell.h"
 
+#import "QSSUploadPhotoCell.h"
+
 @interface QSSEditGroupViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -39,6 +41,9 @@
     UINib *nib1 = [UINib nibWithNibName:NSStringFromClass(QSSGroupContentCell.class) bundle:nil];
     [self.tableView registerNib:nib1 forCellReuseIdentifier:NSStringFromClass(QSSGroupContentCell.class)];
     
+    UINib *nib2 = [UINib nibWithNibName:NSStringFromClass(QSSUploadPhotoCell.class) bundle:nil];
+    [self.tableView registerNib:nib2 forCellReuseIdentifier:NSStringFromClass(QSSUploadPhotoCell.class)];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTableView) name:@"updateTableView" object:nil];
     
     [self.view addSubview:self.tableView];
@@ -62,17 +67,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *tags = @[NSStringFromClass(QSSGroupNameInfoCell.class),NSStringFromClass(QSSGroupContentCell.class)];
+    NSArray *tags = @[NSStringFromClass(QSSGroupNameInfoCell.class),NSStringFromClass(QSSGroupContentCell.class),NSStringFromClass(QSSUploadPhotoCell.class)];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tags[indexPath.row] forIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 
 
@@ -80,6 +89,7 @@
 -(UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }

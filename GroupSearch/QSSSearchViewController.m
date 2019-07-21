@@ -61,16 +61,44 @@
     [[RACObserve(self, viewModel.cellModels) ignore:nil] subscribeNext:^(NSArray *x) {
         @strongify(self);
         [self.tableView reloadData];
-    }];
+    }];    
     
     self.searchBar.delegate = self;
     
+    [self.viewModel.requestGroupCommand.errors subscribeNext:^(NSError * _Nullable x) {
+        
+    }];
 }
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+    for(id view in [searchBar.subviews[0] subviews])
+    {
+        if([view isKindOfClass:[UIButton class]])
+        {
+            UIButton *btn = (UIButton *)view;
+            btn.titleLabel.font = [UIFont systemFontOfSize:16];
+            [btn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+            [btn setContentEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 0)];  //解决iOS10上按钮太小的问题
+            btn.titleLabel.adjustsFontSizeToFitWidth = YES;
+        }
+    }
+}
+
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self.viewModel.requestGroupCommand execute:searchText];
 }
 
+
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -99,6 +127,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     QSSGroupInfoCellModel *cellModel = self.viewModel.cellModels[indexPath.row];
     NSDictionary *params = @{@"group":cellModel.groupInfo};
     QSSGroupDetailViewModel *viewModel = [[QSSGroupDetailViewModel alloc] initWithParams:params];
@@ -114,6 +143,7 @@
         _searchBar = [[UISearchBar alloc] init];
         _searchBar.placeholder = @"搜索";
         _searchBar.tintColor = UIColor.whiteColor;
+        _searchBar.showsCancelButton = YES;
         _searchBar.barTintColor = UIColor.whiteColor;
         
     }

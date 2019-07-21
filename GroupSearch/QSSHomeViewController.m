@@ -84,7 +84,8 @@
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     QSSSearchViewModel *viewModel = [[QSSSearchViewModel alloc] init];
     QSSSearchViewController *vc = [[QSSSearchViewController alloc] initWithViewModel:viewModel];
-    [self presentViewController:vc animated:NO completion:^{
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:navc animated:NO completion:^{
         
     }];
     return NO;

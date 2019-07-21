@@ -23,6 +23,8 @@
 		963DBBF222DAF95A008B52AB /* QSSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DBBF122DAF95A008B52AB /* QSSBaseViewController.m */; };
 		963DBBF522DAFA56008B52AB /* QSSGroupDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DBBF422DAFA56008B52AB /* QSSGroupDetailViewModel.m */; };
 		963DBBF822DAFB99008B52AB /* QSSBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963DBBF722DAFB99008B52AB /* QSSBaseViewModel.m */; };
+		966A4C8222E3F64F00FF6914 /* QSSUploadPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966A4C8022E3F64F00FF6914 /* QSSUploadPhotoCell.m */; };
+		966A4C8322E3F64F00FF6914 /* QSSUploadPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966A4C8122E3F64F00FF6914 /* QSSUploadPhotoCell.xib */; };
 		966BA89222DB146E005F73B1 /* QSSGroupContentShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA89022DB146E005F73B1 /* QSSGroupContentShowCell.m */; };
 		966BA89322DB146E005F73B1 /* QSSGroupContentShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 966BA89122DB146E005F73B1 /* QSSGroupContentShowCell.xib */; };
 		966BA89622DB1501005F73B1 /* QSSGroupContentShowCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 966BA89522DB1501005F73B1 /* QSSGroupContentShowCellModel.m */; };
@@ -78,6 +80,9 @@
 		963DBBF422DAFA56008B52AB /* QSSGroupDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSGroupDetailViewModel.m; sourceTree = "<group>"; };
 		963DBBF622DAFB99008B52AB /* QSSBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSBaseViewModel.h; sourceTree = "<group>"; };
 		963DBBF722DAFB99008B52AB /* QSSBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSBaseViewModel.m; sourceTree = "<group>"; };
+		966A4C7F22E3F64F00FF6914 /* QSSUploadPhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSUploadPhotoCell.h; sourceTree = "<group>"; };
+		966A4C8022E3F64F00FF6914 /* QSSUploadPhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSUploadPhotoCell.m; sourceTree = "<group>"; };
+		966A4C8122E3F64F00FF6914 /* QSSUploadPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSUploadPhotoCell.xib; sourceTree = "<group>"; };
 		966BA88F22DB146E005F73B1 /* QSSGroupContentShowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QSSGroupContentShowCell.h; sourceTree = "<group>"; };
 		966BA89022DB146E005F73B1 /* QSSGroupContentShowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSSGroupContentShowCell.m; sourceTree = "<group>"; };
 		966BA89122DB146E005F73B1 /* QSSGroupContentShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QSSGroupContentShowCell.xib; sourceTree = "<group>"; };
@@ -218,6 +223,9 @@
 				966BA8A922DF7BF2005F73B1 /* QSSSearchViewController.xib */,
 				966BA8AC22DF7CAC005F73B1 /* QSSSearchViewModel.h */,
 				966BA8AD22DF7CAC005F73B1 /* QSSSearchViewModel.m */,
+				966A4C7F22E3F64F00FF6914 /* QSSUploadPhotoCell.h */,
+				966A4C8022E3F64F00FF6914 /* QSSUploadPhotoCell.m */,
+				966A4C8122E3F64F00FF6914 /* QSSUploadPhotoCell.xib */,
 			);
 			path = GroupSearch;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 				963DBBDC22DA1E92008B52AB /* QSSGroupNameInfoCell.xib in Resources */,
 				966BA89B22DB214C005F73B1 /* QSSGroupQRCodeShowCell.xib in Resources */,
 				963DBBD722DA1AAE008B52AB /* QSSEditGroupViewController.xib in Resources */,
+				966A4C8322E3F64F00FF6914 /* QSSUploadPhotoCell.xib in Resources */,
 				963DBBEF22DAE0B0008B52AB /* QSSGroupDetailViewController.xib in Resources */,
 				96D3F79222D9B83100925CBA /* LaunchScreen.storyboard in Resources */,
 				966BA8A322DB2FA8005F73B1 /* QSSQRCodeDetailViewController.xib in Resources */,
@@ -353,6 +362,7 @@
 				966BA89222DB146E005F73B1 /* QSSGroupContentShowCell.m in Sources */,
 				966BA8A622DB3058005F73B1 /* QSSQRCodeDetailViewModel.m in Sources */,
 				96D3F7A122D9BC1C00925CBA /* QSSGroupInfoCell.m in Sources */,
+				966A4C8222E3F64F00FF6914 /* QSSUploadPhotoCell.m in Sources */,
 				963DBBF822DAFB99008B52AB /* QSSBaseViewModel.m in Sources */,
 				963DBBF222DAF95A008B52AB /* QSSBaseViewController.m in Sources */,
 				966BA89E22DB2168005F73B1 /* QSSGroupQRCodeShowCellModel.m in Sources */,
@@ -497,6 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7Z76WDTD6;
 				INFOPLIST_FILE = GroupSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,6 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7Z76WDTD6;
 				INFOPLIST_FILE = GroupSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
