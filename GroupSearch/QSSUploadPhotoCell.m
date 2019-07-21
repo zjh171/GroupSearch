@@ -8,11 +8,14 @@
 
 #import "QSSUploadPhotoCell.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "QSSUploadPhotoCellModel.h"
 
 @interface QSSUploadPhotoCell ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 
+
+@property (nonatomic, strong) QSSUploadPhotoCellModel *viewModel;
 
 @end
 
@@ -67,6 +70,13 @@
         
     }];
     
+    
+    
+}
+
+-(void) bindViewModel:(id) viewModel {
+    self.viewModel = viewModel;
+    
 }
 
 
@@ -74,14 +84,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     //定义一个newPhoto，用来存放我们选择的图片。
     UIImage *newPhoto = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-
+    self.viewModel.qrCodeImage = newPhoto;
+    
     [self.uploadButton setBackgroundImage:newPhoto forState:UIControlStateNormal];
     UIViewController *vc = [self.class jsd_getCurrentViewController];
 
     [vc dismissViewControllerAnimated:YES completion:nil];
     
-    //需要更新服务器上的图片
-    //    [self uploadIcon:newPhoto];
 }
 
 + (UIViewController *)jsd_getRootViewController{

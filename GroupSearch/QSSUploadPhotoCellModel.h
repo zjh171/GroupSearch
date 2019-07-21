@@ -1,19 +1,19 @@
 //
-//  QSSUploadPhotoCell.h
+//  QSSUploadPhotoCellModel.h
 //  GroupSearch
 //
 //  Created by kyson on 2019/7/21.
 //  Copyright © 2019 cn.kyson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "QSSBaseViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QSSUploadPhotoCell : UITableViewCell
+@interface QSSUploadPhotoCellModel : QSSBaseViewModel
 
 
--(void) bindViewModel:(id) viewModel;
+@property (nonatomic, strong) UIImage *qrCodeImage;
 
 @end
 

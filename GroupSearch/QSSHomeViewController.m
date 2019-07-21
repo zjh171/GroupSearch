@@ -92,7 +92,8 @@
 }
 
 -(void) addButtonClicked {
-    QSSEditGroupViewController *vc = [[QSSEditGroupViewController alloc] init];
+    QSSEditGroupViewModel *viewModel = [[QSSEditGroupViewModel alloc] init];
+    QSSEditGroupViewController *vc = [[QSSEditGroupViewController alloc] initWithViewModel:viewModel];
     UINavigationController *navc = [[UINavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:navc animated:YES completion:^{
         

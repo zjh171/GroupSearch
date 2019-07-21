@@ -12,8 +12,7 @@
 
 #import "QSSUploadPhotoCell.h"
 #import "QSSGroupSubmitView.h"
-
-#import "QSSEditGroupViewModel.h"
+#import "QSSGroupNameInfoCell.h"
 
 @interface QSSEditGroupViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -104,6 +103,15 @@
     NSArray *tags = @[NSStringFromClass(QSSGroupNameInfoCell.class),NSStringFromClass(QSSGroupContentCell.class),NSStringFromClass(QSSUploadPhotoCell.class)];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tags[indexPath.row] forIndexPath:indexPath];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    if ([cell isKindOfClass:QSSUploadPhotoCell.class]) {
+        [((QSSUploadPhotoCell *) cell ) bindViewModel:self.viewModel.photoCellModel];
+    }
+    
+    if ([cell isKindOfClass:QSSGroupNameInfoCell.class]) {
+        [((QSSGroupNameInfoCell *) cell ) bindViewModel:self.viewModel.groupNameInfoCellModel];
+    }
+    
     
     return cell;
 }

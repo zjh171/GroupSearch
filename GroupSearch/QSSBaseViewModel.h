@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QSSBaseViewModel : NSObject
 
+
+@property (nonatomic, strong) RACSubject *errorSubject;
+
+
 @property (nonatomic, strong,readonly) NSDictionary *params;
 
 -(instancetype) initWithParams:(NSDictionary *) params;

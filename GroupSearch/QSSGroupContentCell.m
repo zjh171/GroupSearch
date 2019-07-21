@@ -8,6 +8,7 @@
 
 #import "QSSGroupContentCell.h"
 #import <ReactiveObjC/ReactiveObjC.h>
+#import "UITextView+ZWPlaceHolder.h"
 
 @interface QSSGroupContentCell ()
 @property (weak, nonatomic) IBOutlet UITextView *contentTextView;
@@ -22,6 +23,7 @@
     [super awakeFromNib];
     // Initialization code
     
+    self.contentTextView.placeholder = @"请输入您的群简介，200字以内";
     [self.contentTextView.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"updateTableView" object:nil];
     }];

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface QSSGroupNameInfoCell : UITableViewCell
 
+
+-(void) bindViewModel:(id) viewModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

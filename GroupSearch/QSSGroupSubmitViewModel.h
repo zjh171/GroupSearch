@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) RACSubject *submitButtonClickedSubject;
 
+@property (nonatomic, assign) BOOL showErrorMsg;
 
 @end
 

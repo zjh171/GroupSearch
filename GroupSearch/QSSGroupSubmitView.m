@@ -22,15 +22,15 @@
     [super awakeFromNib];
     self.submitButton.layer.cornerRadius = 4.f;
     self.submitButton.clipsToBounds = YES;
-//    @weakify(self);
-//    [_submitView.submitButtonClickedSubject subscribeNext:^(id  _Nullable x) {
-//        @strongify(self);
-//        
-//    }];
     @weakify(self);
     [[self.submitButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
         [self.viewModel.submitButtonClickedSubject sendNext:nil];
+    }];
+    
+    [RACObserve(self, viewModel.showErrorMsg) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        
     }];
 }
 

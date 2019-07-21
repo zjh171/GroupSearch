@@ -15,10 +15,14 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - FBRetainCycleDetector (0.1.4)
+  - HappyDNS (0.3.15)
   - Masonry (1.1.0)
+  - MBProgressHUD (1.1.0)
   - MJExtension (3.0.17)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
+  - Qiniu (7.2.5):
+    - HappyDNS (~> 0.3)
   - ReactiveObjC (3.1.1)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
@@ -27,30 +31,38 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.2.1)
   - Masonry (= 1.1.0)
+  - MBProgressHUD
   - MJExtension (= 3.0.17)
   - MLeaksFinder (= 1.0.0)
+  - Qiniu (= 7.2.5)
   - ReactiveObjC (= 3.1.1)
-  - SDWebImage
+  - SDWebImage (= 5.0.6)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - FBRetainCycleDetector
+    - HappyDNS
     - Masonry
+    - MBProgressHUD
     - MJExtension
     - MLeaksFinder
+    - Qiniu
     - ReactiveObjC
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  HappyDNS: 00c15e651a347206e58a20503a32a5564589b56a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 74ec83124a68891619fb7ba9c5c811bbf1691076
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
+  Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
 
-PODFILE CHECKSUM: 7a0b5b418fce6c5e752b75116d4fc056efb4529f
+PODFILE CHECKSUM: d9dfcfcfb24ed4652cfd3405bde211f07b634fdc
 
 COCOAPODS: 1.5.3

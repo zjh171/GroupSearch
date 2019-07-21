@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong,readwrite) NSDictionary *params;
 
+
 @end
 
 
@@ -34,5 +35,35 @@
     
 }
 
+//-(RACSignal *)errorSignal {
+//    if (!_errorSignal) {
+//        _errorSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+//
+//            RACDisposable *dispose = [RACDisposable disposableWithBlock:^{
+//
+//            }];
+//            return dispose;
+//
+//        }];
+//    }
+//    return _errorSignal;
+//}
+//
+//-(RACCommand *)errorCommand {
+//    if (!_errorCommand) {
+//        _errorCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+//            return self.errorSignal;
+//        }];
+//    }
+//    return _errorCommand;
+//}
+
+
+-(RACSubject *)errorSubject {
+    if (!_errorSubject) {
+        _errorSubject = [RACSubject subject];
+    }
+    return _errorSubject;
+}
 
 @end
